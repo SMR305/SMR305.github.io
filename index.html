@@ -1,2 +1,65 @@
-<h1>Hello World</h1>
-<a href="https://www.twitch.tv/dragonace_live">Twitch Link</a>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Development Website</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script>
+            function getHexColor() {
+                let hex = Math.floor(Math.random() * 16777215).toString(16);
+                return hex;
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                const dynamicCardContents = document.querySelectorAll("#dynamic-card-content");
+                dynamicCardContents.forEach(card => {
+                    const randColor = getHexColor();
+                    const randColor2 = getHexColor();
+                    const randColor3 = getHexColor();
+                    const gradStyle = `background-color: #${randColor.padStart(6, '0')}; background-image: linear-gradient(43deg, #${randColor.padStart(6, '0')} 0%, #${randColor2.padStart(6, '0')} 46%, #${randColor3.padStart(6, '0')} 100%);`;
+                    card.style = gradStyle;
+                });
+            });
+        </script>
+
+    <body>
+        <h1>Development Website</h1>
+
+        <div class="card">
+            <div class="card-content" id="dynamic-card-content">
+            <p class="card-title">Introduction
+            </p><p class="card-para">
+                Hello there!
+                <br> <br>
+
+                This area still needs a lot of development, but the intention of
+                this page is to use it to keep both my practice with HTML and 
+                coding good as well as to serve as a place to track and update
+                information about my current projects and recent work.
+                <br> <br>
+
+                Hopefully, this will help get me rolling and keep me working on more things.
+            </p>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="card">
+        <div class="card-content">
+            <p class="card-title">General other information or links.
+            </p><a href="https://www.twitch.tv/dragonace_live" class="card-para">Twitch Link</a>
+        </div>
+        </div>
+
+        <br>
+
+        <div class="card" style="width: 300px; margin: 0 auto; text-align: center;"></div>
+        <div class="card-content" id="dynamic-card-content">
+            <p class="card-title">Contributors
+            </p><ul class="card-para">
+            <li>Me</li>
+            </ul>
+        </div>
+        </div>
+    </body>
+</html>
